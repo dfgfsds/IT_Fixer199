@@ -2,10 +2,13 @@
 // import { useRouter } from 'next/navigation';
 import { HiOutlineChevronRight } from 'react-icons/hi';
 import { BsCardText } from 'react-icons/bs';
+import PhoneLoginModal from '@/components/Modals/LoginModal/LoginModal';
+import { useState } from 'react';
 
 
 export default function ProfilePage() {
   // const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
 
   // const handleLoginSignup = () => {
   //   router.push('/login'); 
@@ -22,7 +25,7 @@ export default function ProfilePage() {
           Profile
         </h1>
         <button
-          // onClick={handleLoginSignup}
+          onClick={()=> setShowModal(!showModal)}
           className="w-full sm:w-auto px-6 py-3 mb-8 text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg text-lg font-medium transition duration-150 ease-in-out shadow-md"
         >
           Log in or sign up
@@ -30,7 +33,7 @@ export default function ProfilePage() {
 
         <hr className="mb-6 border-gray-200" />
 
-        <div
+        {/* <div
           // onClick={handleAboutClick}
           className="flex items-center justify-between py-3 px-1 cursor-pointer hover:bg-gray-50 rounded-lg transition duration-150"
         >
@@ -42,9 +45,11 @@ export default function ProfilePage() {
           </div>
 
           <HiOutlineChevronRight className="w-5 h-5 text-gray-400" />
-        </div>
+        </div> */}
 
       </div>
+            {showModal && <PhoneLoginModal handleClos={() => setShowModal(!showModal)} />}
+      
     </div>
   );
 }

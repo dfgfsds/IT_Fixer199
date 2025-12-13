@@ -93,6 +93,10 @@ export default function Home() {
       name: 'Virus Removal',
       image: 'https://i.pinimg.com/1200x/61/00/6c/61006ca171deed9515384fa748187f42.jpg',
     },
+    {
+      name: 'Laptop Dust Removal',
+      image: 'https://i.pinimg.com/1200x/4b/01/ad/4b01ad299c588d7fcf08a5eda563b408.jpg',
+    },
   ];
 
   // const images = [
@@ -180,7 +184,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="container mx-auto px-10 flex  justify-between mt-8">
+              <div className="container mx-auto px-6 md:px-10 flex  justify-between mt-8">
                 <div className="flex items-center space-x-2">
                   <FaStarHalfAlt className="text-xl text-black" />
                   <div>
@@ -196,6 +200,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+
+
 
             </div>
 

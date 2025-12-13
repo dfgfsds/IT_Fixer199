@@ -142,12 +142,13 @@ const UserLoginButton = () => {
       {/* Mobile */}
       <div className="flex items-start p-4 md:p-0 lg:hidden truncate">
         <FiMapPin className="w-5 h-5 mt-1 mr-2 text-gray-700" />
-        <div className="truncate">
+        <div className="truncate flex items-center-safe">
           <p className="text-xl font-semibold text-gray-900">{locality}</p>
-          <div className="flex items-center">
+            <FiChevronDown className="w-4 h-4 ml-1 text-gray-600" />
+          {/* <div className="flex items-center">
             <p className="text-sm text-gray-600 truncate">{city}</p>
             <FiChevronDown className="w-4 h-4 ml-1 text-gray-600" />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -203,9 +204,9 @@ const UserLoginButton = () => {
     <>
       <header className="sticky top-0 z-[9999] bg-white border-b shadow-sm px-4 md:px-8">
         {/* Mobile */}
-        <div className="md:hidden flex flex-col gap-2">
+        <div className="md:hidden flex flex-col gap-0">
           {showTopSection && (
-            <div className="flex justify-between items-center py-3">
+            <div className="flex justify-between items-center py-0">
               <LocationInput />
               <div className="flex items-center gap-2">
                 <button
@@ -222,7 +223,7 @@ const UserLoginButton = () => {
             </div>
           )}
 
-          <div className="py-3">
+          <div className="py-2">
             <SearchInput placeholder={`Search for '${displayText}'`} />
           </div>
         </div>
