@@ -1,0 +1,60 @@
+
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+:root {
+  --space-xs: 0.5rem;   
+  --space-sm: 1rem;     
+  --space-md: 2rem;     
+  --space-lg: 3rem;    
+  --space-xl: 4rem; 
+}
+
+.utility-spacing {
+  padding-inline: var(--space-sm);        
+  padding-block: var(--space-md);          
+  margin-inline: auto;                     
+}
+
+@media (min-width: 768px) {
+  .utility-spacing {
+    padding-inline: var(--space-md);       
+  }
+}
+
+@media (min-width: 1024px) {
+  .utility-spacing {
+    padding-block: var(--space-lg);      
+  }
+}
+
+@theme {
+  --color-primary: #6e42e5;
+  --color-secondary: oklch(0.79 0.05 110.87);
+
+    /* Font family */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --text-base: 14px var(--font-sans);
+    --text-medium: 16px var(--font-sans);
+    --text-large: 18px var(--font-sans);
+    --text-xlarge: 20px var(--font-sans);
+    --text-xxlarge: 24px var(--font-sans);
+    --text-xxxlarge: 32px var(--font-sans);
+    --text-heading: 36px var(--font-sans);
+    --text-title: 48px var(--font-sans);
+    --text-subtitle: 28px var(--font-sans);
+    --text-caption: 12px var(--font-sans);
+    --text-small: 10px var(--font-sans);
+    --text-button: 14px var(--font-sans);
+    --text-link: 16px var(--font-sans);
+}
+
+/* Add this to your global CSS */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
