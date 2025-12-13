@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaStarHalfAlt, FaUsers } from "react-icons/fa";
 
-export default function HeroServices({ services, setOpenApplianceModal }) {
+export default function HeroServices({ services, setOpenApplianceModal }:any) {
   return (
     <section className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -19,7 +19,7 @@ export default function HeroServices({ services, setOpenApplianceModal }) {
               </h2>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {services?.map((service, index) => (
+                {services?.map((service:any, index:number) => (
                   <div
                     key={index}
                     onClick={() => setOpenApplianceModal(true)}
