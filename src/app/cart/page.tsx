@@ -91,7 +91,7 @@ export default function CartPage() {
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold mb-1">Send booking details to</p>
-                                    <p className="text-gray-600 font-medium">+91 9715250774</p>
+                                    {/* <p className="text-gray-600 font-medium">+91 9715250774</p> */}
                                 </div>
                             </div>
                         </div>
@@ -153,7 +153,7 @@ export default function CartPage() {
                 <div className="lg:col-span-5 space-y-4">
                     <div className="p-4 rounded-md border border-gray-300 ">
 
-                        <div className="flex items-center justify-between mb-3 p-2 border-b border-gray-300 pb-4">
+                        <div className="flex items-center justify-between gap-4 mb-3 p-2 border-b border-gray-300 pb-4">
                             <div>
                                 <p className="font-medium">Foam-jet service (2 ACs)</p>
                             </div>
