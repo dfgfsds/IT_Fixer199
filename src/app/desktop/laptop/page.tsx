@@ -20,14 +20,14 @@ function LaptopIndex() {
     },
 
   ];
-    return(
-        <>
-              <div className="utility-spacing">
-          <CategoryGrid title="Laptops" items={laptopItems} />
-        </div>
-        
-        </>
-    )
+  return (
+    <>
+      <div className="utility-spacing">
+        <CategoryGrid title="Laptops" items={laptopItems} />
+      </div>
+
+    </>
+  )
 
 }
 
