@@ -141,7 +141,7 @@ const VideoSection = () => {
               onClick={() => openModalAt(i)}
             >
               <div className="rounded-xl overflow-hidden relative group">
-                <div className="w-full aspect-[9/16] bg-gray-100">
+           <div className="w-full aspect-[3/5] bg-gray-100">
                   <Image
                   height={400}
                   width={300}
@@ -151,9 +151,10 @@ const VideoSection = () => {
                   />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <FaCirclePlay className="text-white text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+<FaCirclePlay className="text-white text-4xl opacity-80" />
                 </div>
-                <div className="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-md">
+           <div className="absolute bottom-3 left-3 text-white text-base font-semibold drop-shadow-md">
+
                   {it.title}
                 </div>
               </div>
@@ -189,7 +190,7 @@ const VideoSection = () => {
             </button>
 
             <div className="relative">
-              <div className="aspect-[4/5] bg-black">
+          <div className="aspect-[9/16] max-h-[70vh] bg-black">
                 <video
                   key={modalIdx}
                   src={items[modalIdx].video}
@@ -217,12 +218,11 @@ const VideoSection = () => {
                   />
                 ))}
               </div>
-
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/60 m-2 rounded-md">
+<div className="absolute bottom-0 left-0 right-0 p-3 bg-black/60 m-2 rounded-md">
                 <div className="text-sm text-gray-300 mb-1">
                   {items[modalIdx].tag}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-1">
+            <h3 className="text-lg font-bold text-white mb-1">
                   {items[modalIdx].title}
                 </h3>
                 <div className="flex justify-between items-center mt-4">

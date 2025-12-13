@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 import ApplianceModal from "@/components/ApplianceModal";
+import banner from "../../../public/banner.png"
 
 // Dynamically import components that may rely on the 'window' object, disabling server-side rendering for them.
 const VideoSection = dynamic(() => import('@/components/VideoSection'), { ssr: false });
@@ -93,10 +94,7 @@ export default function DeskTop() {
       name: 'Virus Removal',
       image: 'https://i.pinimg.com/1200x/61/00/6c/61006ca171deed9515384fa748187f42.jpg',
     },
-    {
-      name: 'Laptop Dust Removal',
-      image: 'https://i.pinimg.com/1200x/4b/01/ad/4b01ad299c588d7fcf08a5eda563b408.jpg',
-    },
+   
   ];
 
   // const images = [
@@ -157,69 +155,83 @@ export default function DeskTop() {
     <>
       <main className="min-h-screen bg-white">
         {/* Banner */}
-        <div className="utility-spacing">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Section: Titles and Service Cards */}
-            <div className="container">
-              <h1 className="text-2xl md:text-2xl lg:text-2xl font-bold text-black mb-4">
-                Home services at your
-                <br />
-                doorstep
+          <section className="bg-white py-14">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* LEFT CONTENT */}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
+                Computer services at your <br /> doorstep
               </h1>
-              <div className="border border-gray-200 p-5 rounded-md">
-                <h2 className="text-lg md:text-xl font-semibold text-gray-500 mb-6">
+
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h2 className="text-lg font-semibold text-gray-600 mb-6">
                   What are you looking for?
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-                  {services?.map((service, index) => (
-                    <div key={index}
-                      onClick={() => setOpenApplianceModal(!openApplianceModal)}
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {services.map((service, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setOpenApplianceModal(true)}
+                      className="group"
                     >
-                      <div className="flex flex-col items-center justify-center p-2 bg-gray-100 rounded-md text-center hover:bg-gray-100 transition-colors cursor-pointer min-h-[70px]">
-                        <Image src={service.icon} alt={service.name} width={48} height={48} className="mb-2" />
+                      <div className="flex items-center justify-center bg-gray-100 rounded-lg h-24 group-hover:bg-gray-200 transition">
+                        <Image
+                          src={service.icon}
+                          alt={service.name}
+                          width={44}
+                          height={44}
+                        />
                       </div>
-                      <span className="text-xs font-medium flex justify-center text-gray-800 mt-1">{service.name}</span>
-                    </div>
+                      <p className="mt-2 text-sm text-center font-medium text-gray-800">
+                        {service.name}
+                      </p>
+                    </button>
                   ))}
                 </div>
               </div>
 
-              <div className="container mx-auto px-6 md:px-10 flex  justify-between mt-8">
-                <div className="flex items-center space-x-2">
-                  <FaStarHalfAlt className="text-xl text-black" />
+              {/* STATS */}
+              <div className="flex gap-12 mt-10">
+                <div className="flex items-center gap-3">
+                  <FaStarHalfAlt className="text-2xl text-gray-900" />
                   <div>
-                    <h3 className="text-xl font-bold text-black">4.8</h3>
-                    <p className="text-sm text-gray-500">Service Rating</p>
+                    <p className="text-xl font-bold">4.8</p>
+                    <p className="text-sm text-gray-500">Service Rating*</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <FaUsers className="text-xl text-black" />
+
+                <div className="flex items-center gap-3">
+                  <FaUsers className="text-2xl text-gray-900" />
                   <div>
-                    <h3 className="text-xl font-bold text-black">12M+</h3>
-                    <p className="text-sm text-gray-500">Customers Globally</p>
+                    <p className="text-xl font-bold">12M+</p>
+                    <p className="text-sm text-gray-500">Happy Customers*</p>
                   </div>
                 </div>
               </div>
-
-
-
-
             </div>
 
-            {/* Right Section: Image Grid */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              <div className="col-span-2 md:col-span-1 rounded-md overflow-hidden">
-                <Image src="https://images.pexels.com/photos/31854227/pexels-photo-31854227.jpeg" alt="Service 3" width={400} height={200} className="w-full h-full object-cover" />
-              </div>
-              <div className="col-span-2 md:col-span-1 rounded-md overflow-hidden">
-                <Image src="https://images.pexels.com/photos/31854227/pexels-photo-31854227.jpeg" alt="Service 4" width={400} height={400} className="w-full h-full object-cover" />
-              </div>
-            </div>
+            {/* RIGHT IMAGE GRID */}
+           <div className="hidden lg:block">
+  <div className="rounded-2xl overflow-hidden shadow-lg">
+    <Image
+      src={banner}
+      alt="Computer Service at Home"
+      width={600}
+      height={650}
+      className="w-full h-full object-cover"
+      priority
+    />
+  </div>
+</div>
+
           </div>
         </div>
-
+      </section>
         {/* Slider */}
-        <div className="relative overflow-hidden utility-spacing">
+        <div className="relative max-w-7xl overflow-hidden utility-spacing">
           <div className="overflow-hidden">
             <div
               ref={containerRef}
@@ -236,7 +248,7 @@ export default function DeskTop() {
                   className="flex-shrink-0"
                   style={{ width: `${100 / visible}%` }}
                 >
-                  <div className="relative w-full h-64 rounded-md overflow-hidden">
+                  <div className="relative w-full h-[220px] rounded-md overflow-hidden">
                     <Image
                       src={src}
                       alt={`slide ${i}`}
@@ -256,7 +268,7 @@ export default function DeskTop() {
             aria-label="Previous"
             onClick={handlePrev}
             disabled={isTransitioning}
-            className="absolute cursor-pointer top-1/2 left-2 -translate-y-1/2 bg-white/90 hover:bg-white shadow rounded-full p-2 disabled:opacity-50"
+            className="absolute cursor-pointer top-1/2 left-2 -translate-y-1/2 bg-white hover:bg-white shadow rounded-full p-2 disabled:opacity-50"
           >
             <FaArrowLeft className="text-black" />
           </button>
@@ -264,14 +276,14 @@ export default function DeskTop() {
             aria-label="Next"
             onClick={handleNext}
             disabled={isTransitioning}
-            className="absolute cursor-pointer top-1/2 right-2 -translate-y-1/2 bg-white/90 hover:bg-white shadow rounded-full p-2 disabled:opacity-50"
+            className="absolute cursor-pointer top-1/2 right-2 -translate-y-1/2 bg-white hover:bg-white shadow rounded-full p-2 disabled:opacity-50"
           >
             <FaArrowRight className="text-black" />
           </button>
         </div>
 
         {/* Video Section */}
-        <div className="utility-spacing">
+        <div className="utility-spacing max-w-7xl">
           <div className="">
             <VideoSection />
           </div>
@@ -279,7 +291,7 @@ export default function DeskTop() {
 
 
         {/* Category Card */}
-        <div className="utility-spacing">
+        <div className="utility-spacing max-w-7xl">
           <div className="">
             <h2 className="text-2xl font-bold mb-6">New and noteworthy</h2>
             <CategoryCard />
@@ -287,34 +299,36 @@ export default function DeskTop() {
         </div>
 
         {/* Service Card */}
-        <div className="">
+        <div className="max-w-7xl mx-auto">
           <div className="utility-spacing">
             <ServicesCardSlider />
           </div>
         </div>
 
-        <div className="utility-spacing">
+        <div className="utility-spacing max-w-7xl">
           <CategoryGrid title="PC & Desktops" items={pcItems} />
         </div>
 
-        <div className="utility-spacing">
+        <div className="utility-spacing max-w-7xl">
           <CategoryGrid title="Laptops" items={laptopItems} />
         </div>
 
-        <div className="relative utility-spacing">
-          <div className="overflow-hidden">
-            <Image
-              src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1752250436156-db21b3.jpeg"
-              alt="Service 4"
-              width={1200} // or any appropriate width
-              height={1200} // or any appropriate height
-              className="transition-transform duration-300 hover:scale-105"
-            />
+       <div className="relative max-w-7xl mx-auto utility-spacing">
+  <div className="overflow-hidden rounded-2xl">
+    <div className="relative w-full aspect-[16/5]">
+      <Image
+        src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1752250436156-db21b3.jpeg"
+        alt="Service banner"
+        fill
+        priority
+        className="object-cover transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+  </div>
+</div>
 
-          </div>
-        </div>
 
-        <div className="utility-spacing">
+        <div className="utility-spacing max-w-7xl">
           <div className="">
             {/* PC section */}
             <CategoryGrid title="PC & Desktops" items={pcItems} />
@@ -323,40 +337,45 @@ export default function DeskTop() {
 
 
         {/* SERVICES  */}
-        <div className="bg-white utility-spacing">
+        <div className="bg-white utility-spacing max-w-7xl">
           <div className="">
             <ServiceCategoryGrid title="PC & Laptop Services" items={pcLaptopServices} />
           </div>
         </div>
 
-        <div className="relative utility-spacing">
-          <div className="overflow-hidden">
-            <Image
-              alt="Service 4"
-              src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1752250436156-db21b3.jpeg"
-              width={1200} // or any appropriate width
-              height={1200} // or any appropriate height
-              className="transition-transform duration-300 hover:scale-105"
-            />
 
-          </div>
-        </div>
+    <div className="relative max-w-7xl mx-auto utility-spacing">
+  <div className="overflow-hidden rounded-2xl">
+    <div className="relative w-full aspect-[16/5]">
+      <Image
+        src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_1232,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1752250436156-db21b3.jpeg"
+        alt="Service banner"
+        fill
+        priority
+        className="object-cover transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+  </div>
+</div>
 
         {/* SERVICES  */}
-        <div className="bg-white utility-spacing">
+        <div className="bg-white utility-spacing max-w-7xl">
           <div className="">
             <ServiceCategoryGrid title="Appliance Repair & Service" items={pcLaptopServices} />
           </div>
         </div>
 
         {/* SERVICES  */}
-        <div className="bg-white utility-spacing">
+        <div className="bg-white utility-spacing max-w-7xl">
           <div className="">
             <ServiceCategoryGrid title="Home Repair & installation" items={pcLaptopServices} />
           </div>
         </div>
       </main>
+        <div className="bg-white utility-spacing max-w-7xl">
       <ApplianceModal isOpen={openApplianceModal} onClose={() => setOpenApplianceModal(!openApplianceModal)} />
+    </div>
+    
     </>
   );
 }

@@ -7,7 +7,7 @@ function Footer() {
     return (
         <>
             <footer className="bg-[#ebebeb] text-gray-300">
-                <div className="utility-spacing">
+                <div className="utility-spacing max-w-7xl">
                     {/* Logo */}
                     {/* <div className="col-span-1 lg:col-span-1"> */}
                     <div className="flex items-center gap-2 mb-4">

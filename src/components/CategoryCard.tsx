@@ -123,7 +123,7 @@ function CategoryCard() {
             <div className="overflow-hidden">
                 <div
                     ref={containerRef}
-                    className="flex gap-2"
+                    className="flex gap-4"
                     style={{
                         transform: `translateX(-${(index * 100) / VISIBLE}%)`,
                         transition: animating ? `transform ${TRANSITION_MS}ms ease` : 'none',
@@ -140,7 +140,7 @@ function CategoryCard() {
                                     <Image
                                         src={it.image}
                                         alt={it.title}
-                                        className="w-full h-52 object-cover rounded-t-md"
+                                        className="w-full h-[280px] object-cover rounded-md"
                                         width={600}
                                         height={208}
                                     />
