@@ -188,11 +188,11 @@ const UserLoginButton = () => {
           Home
         </span>
 
-        <span onClick={() => onItemClick('/pc')} className={linkClass('/pc')}>
+        <span onClick={() => onItemClick('/desktop/pc')} className={linkClass('/pc')}>
           PC
         </span>
 
-        <span onClick={() => onItemClick('/laptop')} className={linkClass('/laptop')}>
+        <span onClick={() => onItemClick('/desktop/laptop')} className={linkClass('/laptop')}>
           Laptop
         </span>
       </nav>

@@ -50,11 +50,30 @@
     --text-link: 16px var(--font-sans);
 }
 
-/* Add this to your global CSS */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* COMMON SECTION SPACING */
+.app-section {
+  max-width: 28rem; /* same as max-w-md */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  padding-top: 1rem;   /* py-4 */
+  padding-bottom: 1rem;
+}
+
+/* COMMON SECTION TITLE */
+.app-section-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
 }
