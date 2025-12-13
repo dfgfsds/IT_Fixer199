@@ -2,12 +2,11 @@
 
 import DeskTop from '@/components/deskTop/page';
 import { useDevice } from '@/lib/useDevice';
-import CartPage from './desktop/cart/page';
-import Mobile from '@/components/Mobile/page';
+import Mobile from './mobile/page';
 
 export default function Page() {
   const device = useDevice();
   if (device === 'mobile') return <Mobile />;
+  if(device === 'tablet') return <Mobile />;
   return <DeskTop />;
 }
-

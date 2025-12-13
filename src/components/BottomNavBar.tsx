@@ -38,36 +38,29 @@ function BottomNavBar() {
     //   ];
 
     const navItems: NavItem[] = [
-          {
+        {
             name: 'Home',
             icon: BiHomeAlt,
             path: '/',
             active: pathname === '/',
         },
-        // {
-        //     name: 'Menu',
-        //     icon: BiGridAlt,
-        //     path: '/menu',
-        //     active: pathname === '/menu',
-        // },
         {
             name: 'PC',
             icon: BiDesktop,
             path: '/pc',
-            active: pathname === '/pc',
+            active: pathname === '/pc' || pathname.startsWith('/pc/'), // Handle nested routes
         },
         {
             name: 'Laptop',
             icon: BiLaptop,
             path: '/laptop',
-            active: pathname === '/laptop',
+            active: pathname === '/laptop' || pathname.startsWith('/laptop/'), // Handle nested routes
         },
-      
         {
             name: 'Account',
             icon: BiUserCircle,
             path: '/profile',
-            active: pathname === '/profile',
+            active: pathname === '/profile' || pathname.startsWith('/profile/'), // Handle nested routes
         },
     ];
 
@@ -81,8 +74,8 @@ function BottomNavBar() {
                         <button
                             key={item.name}
                             className={`flex flex-col items-center justify-center p-1 w-full h-full transition duration-150 ${item.active
-                                    ? 'text-red-500'
-                                    : 'text-gray-500 hover:text-red-400'
+                                ? 'text-red-500'
+                                : 'text-gray-500 hover:text-red-400'
                                 }`}
                             onClick={() => handleNavClick(item.path)}
                             aria-label={item.name}
