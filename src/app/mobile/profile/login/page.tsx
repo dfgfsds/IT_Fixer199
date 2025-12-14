@@ -25,12 +25,12 @@ export default function LoginPage() {
         {/* UC BRAND */}
         <div className="flex items-center gap-2 mb-6">
           <Image
-                   src={Logo}
-                   alt='logo'
-                   width={56}
-                   height={56}
-                   className="object-contain"
-                 />
+            src={Logo}
+            alt='logo'
+            width={56}
+            height={56}
+            className="object-contain"
+          />
         </div>
 
         {/* TITLE */}
@@ -53,13 +53,21 @@ export default function LoginPage() {
 
           {/* NUMBER */}
           <input
+            type="tel"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            maxLength={10}
             value={phone}
-            onChange={(e) =>
-              setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))
-            }
+            onChange={(e) => {
+              const onlyNumbers = e.target.value.replace(/[^0-9]/g, "");
+              if (onlyNumbers.length <= 10) {
+                setPhone(onlyNumbers);
+              }
+            }}
             placeholder="Enter your phone number"
             className="flex-1 px-4 py-3 text-[15px] outline-none"
           />
+
 
           {/* CLEAR */}
           {phone && (
@@ -75,12 +83,11 @@ export default function LoginPage() {
         {/* CONTINUE */}
         <button
           disabled={!canContinue}
-        onClick={() => router.push(`otp?phone=${phone}`)}
+          onClick={() => router.push(`otp?phone=${phone}`)}
           className={`w-full py-3 rounded-xl text-[15px] font-medium
-            ${
-              canContinue
-                ? "bg-[#6E42E5] text-white"
-                : "bg-gray-200 text-gray-400"
+            ${canContinue
+              ? "bg-[#6E42E5] text-white"
+              : "bg-gray-200 text-gray-400"
             }
           `}
         >
