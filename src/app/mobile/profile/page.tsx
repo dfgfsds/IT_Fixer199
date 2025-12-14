@@ -5,34 +5,56 @@ import { User } from "lucide-react";
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-[#F9FAFB] px-4 pt-8">
-      {/* Card */}
-      <div className="bg-white rounded-2xl shadow-sm p-6">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B0F19] px-6">
 
+      {/* Gradient Blobs */}
+      <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[#6E42E5]/30 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#22D3EE]/20 rounded-full blur-[120px]" />
 
+      {/* Content */}
+      <div className="relative z-10 max-w-2xl text-center text-white">
 
-        {/* Title */}
-        <h1 className="text-[22px] flex gap-5 items-center font-bold text-[#111827] mb-2">
-          {/* Icon */}
-          <div className="w-12 h-12 bg-[#6E42E5]/10 rounded-xl flex items-center justify-center mb-4">
-            <User className="text-[#6E42E5]" size={22} />
-          </div>
-          Welcome to ItFixer@199
+        {/* Icon */}
+        <div className="mx-auto mb-8 w-20 h-20 bg-white/10 backdrop-blur rounded-3xl flex items-center justify-center border border-white/10">
+          <User size={30} className="text-[#8B5CF6]" />
+        </div>
+
+        {/* Heading */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+          Fix your tech.
+          <br />
+          <span className="bg-gradient-to-r from-[#8B5CF6] to-[#22D3EE] bg-clip-text text-transparent">
+            Without the stress.
+          </span>
         </h1>
 
         {/* Description */}
-        <p className="text-[14px] text-gray-600 leading-relaxed mb-6">
-          Log in to manage your PC & laptop services, track bookings,
-          and get expert support from verified professionals.
+        <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mx-auto mb-12">
+          ItFixer@199 helps you manage PC & laptop services, track repairs,
+          and connect with verified experts — fast, reliable & affordable.
         </p>
 
-        {/* Button */}
-        <Link href="profile/login">
-          <button className="w-full bg-[#6E42E5] text-white py-3 rounded-xl text-[15px] font-medium hover:bg-[#5c36d4] transition">
-            Log in or sign up
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="profile/login">
+            <button className="px-10 py-4 rounded-2xl text-base font-semibold bg-gradient-to-r from-[#8B5CF6] to-[#6E42E5] hover:opacity-90 transition shadow-xl">
+              Get Started
+            </button>
+          </Link>
+
+          <button className="px-10 py-4 rounded-2xl text-base font-semibold border border-white/20 hover:bg-white/10 transition">
+            Learn More
           </button>
-        </Link>
+        </div>
+
+        {/* Trust Line */}
+        <p className="mt-10 text-sm text-gray-400">
+          Trusted by 1000+ customers • Same-day service • Transparent pricing
+        </p>
       </div>
     </div>
+
+
+
   );
 }
