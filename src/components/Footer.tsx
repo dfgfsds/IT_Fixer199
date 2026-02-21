@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 // import logo from "../../public/image /Logo.png";
 
@@ -29,8 +30,9 @@ function Footer() {
                             <ul className="space-y-2 text-sm text-[#595858]">
                                 <li><a href="#" className="hover:underline">About us</a></li>
                                 <li><a href="#" className="hover:underline">Investor Relations</a></li>
-                                <li><a href="#" className="hover:underline">Terms & conditions</a></li>
-                                <li><a href="#" className="hover:underline">Privacy policy</a></li>
+                                <li><a href="#" className="hover:underline"></a></li>
+                                <li><Link href="/terms-conditions" className="hover:underline">Terms & conditions</Link></li>
+                                <li><Link href="/privacy-policy" className="hover:underline">Privacy policy</Link></li>
                                 <li><a href="#" className="hover:underline">Anti-discrimination policy</a></li>
                                 <li><a href="#" className="hover:underline">ESG Impact</a></li>
                                 <li><a href="#" className="hover:underline">Careers</a></li>
@@ -93,7 +95,7 @@ function Footer() {
                     <div className="text-gray-500 text-xs space-y-2">
                         {/* <p className="italic">* As on December 31, 2024</p> */}
                         <p>
-                            © Copyright 2025 IT Fixer. (formerly known as IT Fixer Technologies India Limited and IT Fixer Technologies India India Limited) All rights reserved. 
+                            © Copyright 2025 IT Fixer. (formerly known as IT Fixer Technologies India Limited and IT Fixer Technologies India India Limited) All rights reserved.
                         </p>
                     </div>
                 </div>
